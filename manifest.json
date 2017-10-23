@@ -1,0 +1,29 @@
+{
+  "name": "Injecta",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Injecting stuff",
+  "homepage_url": "http://choyle.me",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_title": "Inject!"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://courselist.wm.edu/courselist/courseinfo/*"],
+      "js": ["jquery-3.2.1.min.js"]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": true
+  },
+  "permissions": [
+    "https://*/*",
+    "http://*/*",
+    "tabs"
+  ]
+}
+
